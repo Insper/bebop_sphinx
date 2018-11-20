@@ -1,5 +1,7 @@
 # Instruções para executar o ROS com o Sphinx
 
+## Instalar Sphinx
+
 [Fonte:](https://developer.parrot.com/docs/sphinx/firststep.html)
 
 Adicionar o repo
@@ -11,10 +13,6 @@ Adicionar a chave criptográfica para abrir o software
 
     sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 508B1AE5
 
-Tentando o workaround (não funcionoi)
-
-    sudo apt-key adv --keyserver keyserver.ubuntu.com:80 --recv-keys 508B1AE5
-
 
 Atualizar
 
@@ -24,7 +22,7 @@ Instalar
 
     sudo apt-get install parrot-sphinx
     
-Vamos também instalar as mesa-utils
+Vamos também instalar as `mesa-utils`
 
     sudo apt-get install mesa-utils
 
@@ -135,6 +133,11 @@ Pronto! A partir de agora vocês podem rodar qualquer código em Python ou rodar
 
 Para fazer um *cleanup* geral, depois que fechar o *Sphinx*, rode estes comandos:
 
+    fdc drop_all instances
+    fdc drop_all firmwares
+    rm /dev/shm/shd_*
+    sudo systemctl stop firmwared.service
+    sudo rm /usr/share/firmwared/firmwares/*
 
 
-
+gedit 
