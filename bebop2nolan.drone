@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<drone
+  name="bebop2"
+  firmware="http://plf.parrot.com/sphinx/firmwares/ardrone3/milos_pc/latest/images/ardrone3-milos_pc.ext2.zip"
+  hardware="milosboard">
+  <machine_params
+    low_gpu="false"
+    with_front_cam="true"
+    with_hd_battery="false"
+    with_flir="false"
+    flir_pos="tilted"/>
+  <pose>default</pose>
+  <interface>eth1</interface>
+</drone>
