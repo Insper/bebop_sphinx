@@ -11,3 +11,7 @@ sudo apt-get install parrot-sphinx
 
 cp bebop2_pfe.drone /opt/parrot-sphinx/usr/share/sphinx/drones/
 
+cp bebop2nolan.drone /opt/parrot-sphinx/usr/share/sphinx/drones/
+
+
+
