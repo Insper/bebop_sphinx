@@ -95,6 +95,12 @@ Instalação dos pacotes do MAVROS:
 
 Checkout de Firmware  do PX4. Sugerimos trabalhar no diretório `~/src``
 
+Crie um diretório ~/src se você ainda não tiver, digitando no terminal:
+
+    mkdir ~/src
+
+Em seguida mude para este diretório
+
     cd ~/src
 
 Baixar:
