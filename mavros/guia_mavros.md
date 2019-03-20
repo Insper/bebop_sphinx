@@ -122,7 +122,7 @@ Precisamos instalar os pré-requisitos para simular com o Gazebo:
 
     git clone https://github.com/PX4/Devguide
 
-    cd build_scripts
+    cd Devguide/build_scripts
 
     chmod a+x ubuntu_sim_ros_gazebo.sh
 
