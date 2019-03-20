@@ -148,7 +148,16 @@ Vai compilar por alguns minutos e abrir o simulador.
 
 ## Para abrir o simulador sem precisar compilar
 
-Execute as linhas abaixo, ou as salve num script com a extensão `.sh`
+Execute as linhas abaixo, ou as salve num script com a extensão `.sh`. Estas linhas sobem o simulador do drone **junto com o ROS**
+
+
+    cd ~/src/Firmware
+    source Tools/setup_gazebo.bash $(pwd) $(pwd)/build/px4_sitl_default
+    export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$(pwd)
+    export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$(pwd)/Tools/sitl_gazebo
+    roslaunch px4 mavros_posix_sitl.launch
+
+Se preferir executar o simulador e o ROS separados, faça:
 
 
     cd ~/src/Firmware
@@ -161,6 +170,10 @@ Execute as linhas abaixo, ou as salve num script com a extensão `.sh`
 Conexão com o drone:
 
     roslaunch mavros px4.launch fcu_url:="udp://:14540@127.0.0.1:14557" # ----conexao com drone
+
+
+### Os comandos abaixos só devem ser usados sob demanda
+
 
 Launch do gazebo:
 
