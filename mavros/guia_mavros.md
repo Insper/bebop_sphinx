@@ -1,8 +1,8 @@
 
 Fonte da primeira parte:
 
-[http://wiki.ros.org/kinetic/Installation/Ubuntu]
-(http://wiki.ros.org/kinetic/Installation/Ubuntu)
+[http://wiki.ros.org/melodic/Installation/Ubuntu]
+(http://wiki.ros.org/melodic/Installation/Ubuntu)
 
 
 
@@ -20,7 +20,7 @@ Atualizar os pacotes do Ubuntu:
 
 Instalar o ROS:
 
-    sudo apt-get install ros-kinetic-desktop-full
+    sudo apt-get install ros-melodic-desktop-full
 
 Iniciar o subsystem ROS:
 
@@ -40,7 +40,7 @@ Faça o seguinte:
 
 Adicionar o ROS às suas variáveis de ambiente (especialmente `PATH`)
 
-    echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
+    echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
     source ~/.bashrc
 
 Dependências de build
@@ -50,13 +50,13 @@ Dependências de build
 
 Fonte para a continuação:
 
-[http://wiki.ros.org/kinetic/Installation/Ubuntu]
-(http://wiki.ros.org/kinetic/Installation/Ubuntu)
+[http://wiki.ros.org/melodic/Installation/Ubuntu]
+(http://wiki.ros.org/melodic/Installation/Ubuntu)
 
 Vamos omitirs os pacotes do Turblebot e instalar os pacotes básicos do ROS
 
 
-    sudo apt-get install ros-kinetic-joy ros-kinetic-teleop-twist-joy ros-kinetic-teleop-twist-keyboard ros-kinetic-laser-proc ros-kinetic-rgbd-launch ros-kinetic-depthimage-to-laserscan ros-kinetic-rosserial-arduino ros-kinetic-rosserial-python ros-kinetic-rosserial-server ros-kinetic-rosserial-client ros-kinetic-rosserial-msgs ros-kinetic-amcl ros-kinetic-map-server ros-kinetic-move-base ros-kinetic-urdf ros-kinetic-xacro ros-kinetic-compressed-image-transport ros-kinetic-rqt-image-view ros-kinetic-gmapping ros-kinetic-navigation ros-kinetic-interactive-markers
+    sudo apt-get install ros-melodic-joy ros-melodic-teleop-twist-joy ros-melodic-teleop-twist-keyboard ros-melodic-laser-proc ros-melodic-rgbd-launch ros-melodic-depthimage-to-laserscan ros-melodic-rosserial-arduino ros-melodic-rosserial-python ros-melodic-rosserial-server ros-melodic-rosserial-client ros-melodic-rosserial-msgs ros-melodic-amcl ros-melodic-map-server ros-melodic-move-base ros-melodic-urdf ros-melodic-xacro ros-melodic-compressed-image-transport ros-melodic-rqt-image-view ros-melodic-gmapping ros-melodic-navigation ros-melodic-interactive-markers
 
 Pacotes para transmissão de vídeo:
 
@@ -71,7 +71,7 @@ Pacotes para
 
 Criando o workspace
 
-    source /opt/ros/kinetic/setup.bash
+    source /opt/ros/melodic/setup.bash
     mkdir -p ~/catkin_ws/src
     cd ~/catkin_ws/src
     catkin_init_workspace
@@ -91,7 +91,7 @@ Agora passamos ao guia específico do MAVROS:
 
 Instalação dos pacotes do MAVROS:
 
-    sudo apt-get install ros-kinetic-mavros ros-kinetic-mavros-extras
+    sudo apt-get install ros-melodic-mavros ros-melodic-mavros-extras
 
 Checkout de Firmware  do PX4. Sugerimos trabalhar no diretório `~/src``
 
