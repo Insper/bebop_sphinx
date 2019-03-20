@@ -158,42 +158,44 @@ Execute as linhas abaixo, ou as salve num script com a extensão `.sh`
     roslaunch px4 posix_sitl.launch
 
 
+Conexão com o drone:
 
-roslaunch mavros px4.launch fcu_url:="udp://:14540@127.0.0.1:14557"----conexao com drone
+    roslaunch mavros px4.launch fcu_url:="udp://:14540@127.0.0.1:14557" # ----conexao com drone
 
-roslaunch px4 posix_sitl.launch---launch do gazebo
+Launch do gazebo:
+
+    roslaunch px4 posix_sitl.launch # ---launch do gazebo
 
 
-Comando uteis: 
+### Comando uteis: 
 
 Posicao e odometria:
 
-rostopic echo /mavros/local_position/odom-----odometria local 
+    rostopic echo /mavros/local_position/odom # -----odometria local 
 
-rostopic echo /mavros/global_position/global------ poisicao de acordo com GPS
+    rostopic echo /mavros/global_position/global # ------ poisicao de acordo com GPS
 
-rostopic echo /mavros/altitude---- apenas dados de altitude
+    rostopic echo /mavros/altitude # ---- apenas dados de altitude
 
 
 
 
 Decolar e pousar:
 
-    rosrun mavros mavsafety arm
-----ligar os motores
+    rosrun mavros mavsafety arm #----ligar os motores
 
-rosrun mavros mavsafety disarm----desligar os motores
+    rosrun mavros mavsafety disarm #----desligar os motores
 
-rosrun mavros mavcmd takeoff----- levantar voo (checar argumentos)
+    rosrun mavros mavcmd takeoff # ----- levantar voo (checar argumentos)
 
-rosrun mavros mavcmd land----- pousar (checar argumentos)
+    rosrun mavros mavcmd land #----- pousar (checar argumentos)
 
 
 
 
 Informacoes sobre a bateria: 
 
-rostopic echo /mavros/battery----bateria do drone
+    rostopic echo /mavros/battery #----bateria do drone
 
 
 
