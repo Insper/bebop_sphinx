@@ -117,6 +117,17 @@ Precisamos instalar os pré-requisitos para simular com o Gazebo:
     cd ~/src
     wget https://raw.githubusercontent.com/PX4/Devguide/master/build_scripts/ubuntu_sim_ros_gazebo.sh
 
+
+*Nota* se o servidor estiver fora do ar, faça:
+
+    git clone https://github.com/PX4/Devguide
+
+    cd build_scripts
+
+    chmod a+x ubuntu_sim_ros_gazebo.sh
+
+    sudo ./ubuntu_sim_ros_gazebo.sh
+
 Agora executar o script:
 
     chmod a+x ./ubuntu_sim_ros_gazebo.sh
