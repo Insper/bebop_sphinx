@@ -1,15 +1,16 @@
 
-## Setup
+## Setup a partir do zero
 
-Link do tutorial (que fui adaptando)
+Link do tutorial original (que fui adaptando)
 
 [https://bebop-autonomy.readthedocs.io/en/latest/installation.html](https://bebop-autonomy.readthedocs.io/en/latest/installation.html)
 
-Criei o diretório `catkin_ws` 
+Crie o diretório `~/catkin_ws` 
 
-Dentro do `catkin_ws`, foi emitido o comando `catkin_init_workspace`
+Dentro do `~/catkin_ws`, foi emitido o comando `catkin_init_workspace`
 
 Depois: 
+
     cd catkin_ws/src
 
 Em seguida: 
@@ -36,11 +37,25 @@ depois, para compilar:
     catkin_make
 
 
-## Como conectar no drone
+## Como conectar no drone se você já tem o bebop_autonomy instalado
 
 Antes de se conectar, certifique-se de que a linha a seguir faz parte do arquivo  `.bashrc` 
 
     source ~/catkin_ws/devel/setup.bash
+
+### Pré-requisitos
+
+**1.** Certifique-se de que as variáveis `ROS_MASTER_URI` e `ROS_IP` estão desabilitadas no `~/.bashrc`
+
+**2.** Anote o  número de série do drone antes de ligar.  O nome da rede em que você vai se conectar usa os 6 últimos caracteres do número serial. Para saber o número serial é preciso **remover a bateria** antes de iniciar o drone.
+
+**3.** Conecte-se ao *access point* do *drone* via *wi-fi*.
+
+**4.** Verifique se a conexão está funcionado:
+
+    ping 192.168.42.1
+
+### Conexão
 
 Abrir um novo terminal. ara conectar com o drone 
 
@@ -97,27 +112,6 @@ Como eu rodei:
     cd scripts/
     python ./drone_drive.py 
 
-
-
-## Simuladores:
-
-Precisamos avaliar os dois simuladores:
-
-TUM Simulator
-
-[http://wiki.ros.org/tum_simulator](http://wiki.ros.org/tum_simulator)
-
-
-Sphinx Gazebo:
-
-[Sphinx Gazebo](https://www.youtube.com/watch?v=JaDAyMki31o)
-
-
-
-
-Como executar um Flight Plan autônomo via Python no Bebop:
-
-[https://bebop-autonomy.readthedocs.io/en/latest/piloting.htm](https://bebop-autonomy.readthedocs.io/en/latest/piloting.html)
 
 
 
