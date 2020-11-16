@@ -1,9 +1,11 @@
 
-## Setup a partir do zero
+# Setup a partir do zero
 
 Link do tutorial original (que fui adaptando)
 
 [https://bebop-autonomy.readthedocs.io/en/latest/installation.html](https://bebop-autonomy.readthedocs.io/en/latest/installation.html)
+
+## Para quem não esta usando o ssd disponibilizado de robotica 
 
 Crie o diretório `~/catkin_ws` 
 
@@ -11,10 +13,10 @@ Dentro do `~/catkin_ws`, foi emitido o comando `catkin_init_workspace`
 
 Depois: 
 
-    cd catkin_ws/src
+    cd ~/catkin_ws/src
 
 Em seguida: 
-
+ 
     git clone https://github.com/AutonomyLab/bebop_autonomy.git
 
 Depois
@@ -23,8 +25,7 @@ Depois
 
 No diretório
 
-    cd    catkin_ws
-
+    cd ~/catkin_ws
 
 Rodar
 
@@ -32,10 +33,54 @@ Rodar
 
 depois, para compilar:
 
-    cd ~/catkin_ws/src
-
     catkin_make
 
+## Resolvendo problemas do catkin_make
+
+Caso ocorra alguma falha durante o catkin_make, ou seja, a compilação não chegar até 100%. Podemso tentar resolver de algumas formas. 
+
+### Trocar repositório bebop_autonomy
+
+Alguns arquivos do repositorio oficial não foram atualizados para as versões mais recentes do ROS. Algumas dessas correções foram feitas no fork abaixo:
+
+    cd ~/catkin_ws/src
+    rm -rf bebop_autonomy
+    git clone https://github.com/arnaldojr/bebop_autonomy.git
+    cd ~/catkin_ws/
+    catkin_make
+
+### Limpar o workspace clean
+
+Exclua as pastas "build" e "devel" e tente novamente:
+
+Asim:
+
+    cd ~/catkin_ws
+    rm -rf build devel
+    catkin_make
+
+ou assim:
+
+    cd ~/catkin_ws
+    catkin clean
+    catkin_make
+
+### Criar um novo workspace
+
+Caso ainda apresente problemas, podemos criar um novo workspace para tentar resolver, vamos chamar esse novo de workspace de bebop_ws. 
+
+    mkdir -p ~/bebop_ws/src && cd ~/bebop_ws
+    catkin init
+    cd ~/bebop_ws/src
+    git clone https://github.com/arnaldojr/bebop_autonomy.git
+    rosdep update
+    rosdep install --from-paths src -i
+    catkin_make
+
+Lembre-se que mudamos o nome do workspace, não é mais catkin_ws, atualize o seu ".bashrc":
+ 
+    cd ~
+    export source ~/bebop_ws/devel/setup.bash
 
 ## Como conectar no drone se você já tem o bebop_autonomy instalado
 
@@ -83,7 +128,13 @@ Para controlar o drone via teleop de teclado:
 
     rosrun teleop_twist_keyboard teleop_twist_keyboard.py cmd_vel:=bebop/cmd_vel
 
+### Como resolver problemas no launch para conectar com o bebop
 
+Se acontecer falhas no comando roslaunch bebop_driver bebop_node.launch, pode ser que a porta de comunicação esteja bloqueada pelo firewall.
+
+    sudo ufw allow 55005
+    sudo ufw allow 55004
+    sudo ufw allow 43210
 
 
 ## Projetos demo de alunos:
@@ -111,7 +162,6 @@ Como eu rodei:
     cd robotica_p3/
     cd scripts/
     python ./drone_drive.py 
-
 
 
 
